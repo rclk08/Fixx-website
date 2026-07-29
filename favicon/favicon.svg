@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Platzhalter-Favicon: Fixx-Wortmarke als Monogramm.
+  Ersetzen, sobald das offizielle Logo als SVG vorliegt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fixx">
+  <rect width="64" height="64" rx="14" fill="#111C3F"/>
+  <path d="M18 20h16v6H24v5h9v6h-9v9h-6V20Z" fill="#FFFFFF"/>
+  <path d="M36 20h6.6l3.4 6 3.4-6H56l-6.8 11L56 42h-6.6l-3.4-6-3.4 6H36l6.8-11L36 20Z" fill="#12B5A5"/>
+</svg>

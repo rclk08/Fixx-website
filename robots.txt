@@ -1,0 +1,12 @@
+# robots.txt – Fixx Landingpage
+#
+# Domain vor dem Deployment ersetzen (siehe README).
+
+User-agent: *
+Allow: /
+
+# Beispiel, falls später ein geschützter Bereich dazukommt:
+# Disallow: /app/
+# Disallow: /login/
+
+Sitemap: https://www.fixx-app.de/sitemap.xml

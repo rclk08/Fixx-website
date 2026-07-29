@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d9488" />
+
+    <title>Kontakt – Fixx</title>
+    <meta name="description" content="Fragen zu Fixx? Schreib uns – wir antworten in der Regel innerhalb eines Werktags." />
+    <link rel="canonical" href="https://www.fixx-app.de/kontakt.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fixx" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content="https://www.fixx-app.de/kontakt.html" />
+    <meta property="og:title" content="Kontakt – Fixx" />
+    <meta property="og:description" content="Fragen zu Fixx? Schreib uns – wir antworten in der Regel innerhalb eines Werktags." />
+    <meta property="og:image" content="https://www.fixx-app.de/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <header class="header" data-header>
+      <div class="container header__inner">
+        <a class="logo" href="index.html" aria-label="Fixx – zur Startseite">
+          FIX<span class="logo__accent">X</span>
+        </a>
+
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a class="nav__link" href="index.html#funktionen">Funktionen</a>
+          <a class="nav__link" href="index.html#branchen">Branchen</a>
+          <a class="nav__link" href="index.html#preise">Preise</a>
+          <a class="nav__link" href="index.html#faq">FAQ</a>
+          <a class="nav__link" href="kontakt.html">Kontakt</a>
+        </nav>
+
+        <a class="btn btn--primary btn--sm header__cta" href="kontakt.html">Kostenlos starten</a>
+
+        <button
+          class="burger"
+          type="button"
+          data-burger
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Menü öffnen"
+        >
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
+      <ul class="mobile-nav__list">
+        <li><a class="mobile-nav__link" href="index.html#funktionen">Funktionen</a></li>
+        <li><a class="mobile-nav__link" href="index.html#branchen">Branchen</a></li>
+        <li><a class="mobile-nav__link" href="index.html#preise">Preise</a></li>
+        <li><a class="mobile-nav__link" href="index.html#faq">FAQ</a></li>
+        <li><a class="mobile-nav__link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a class="btn btn--primary btn--block" href="kontakt.html">Kostenlos starten</a>
+    </div>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Kontakt</span>
+          <h1>Sprich uns an</h1>
+          <p class="lead">
+            Fragen zum Produkt, zu Preisen oder zur Einrichtung? Wir antworten in der Regel
+            innerhalb eines Werktags.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <div data-reveal="left">
+              <div class="contact-card">
+                <h3>E-Mail</h3>
+                <p>
+                  Am schnellsten erreichst du uns schriftlich.<br />
+                  <a href="mailto:kontakt@fixx-app.de">kontakt@fixx-app.de</a>
+                  <span class="ph">[Adresse pr&#252;fen]</span>
+                </p>
+              </div>
+
+              <div class="contact-card">
+                <h3>Anschrift</h3>
+                <p>
+                  <span class="ph">[Firmenname]</span><br />
+                  <span class="ph">[Stra&#223;e und Hausnummer]</span><br />
+                  <span class="ph">[PLZ und Ort]</span>
+                </p>
+              </div>
+
+              <div class="contact-card">
+                <h3>Presse &amp; Partnerschaften</h3>
+                <p>
+                  F&#252;r Medienanfragen und Kooperationen:
+                  <a href="mailto:presse@fixx-app.de">presse@fixx-app.de</a>
+                  <span class="ph">[Adresse pr&#252;fen]</span>
+                </p>
+              </div>
+            </div>
+
+            <form
+              class="form"
+              data-contact-form
+              data-recipient="kontakt@fixx-app.de"
+              novalidate
+              data-reveal="right"
+            >
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  data-required
+                  aria-describedby="err-name"
+                />
+                <span class="field__error" id="err-name">Bitte gib deinen Namen ein.</span>
+              </div>
+
+              <div class="field">
+                <label for="email">E-Mail-Adresse</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  data-required
+                  aria-describedby="err-email"
+                />
+                <span class="field__error" id="err-email">
+                  Bitte gib eine g&#252;ltige E-Mail-Adresse ein.
+                </span>
+              </div>
+
+              <div class="field">
+                <label for="subject">Betreff</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  data-required
+                  aria-describedby="err-subject"
+                />
+                <span class="field__error" id="err-subject">Bitte gib einen Betreff ein.</span>
+              </div>
+
+              <div class="field">
+                <label for="message">Nachricht</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  data-required
+                  aria-describedby="err-message"
+                ></textarea>
+                <span class="field__error" id="err-message">
+                  Bitte schreib uns kurz dein Anliegen.
+                </span>
+              </div>
+
+              <button class="btn btn--primary btn--block" type="submit">Nachricht senden</button>
+
+              <p class="form__hint">
+                Beim Absenden &#246;ffnet sich dein E-Mail-Programm mit einer vorbereiteten
+                Nachricht. Die Eingaben werden nicht an unseren Server &#252;bertragen. Mehr
+                dazu in der <a href="datenschutz.html">Datenschutzerkl&#228;rung</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <span class="logo">FIX<span class="logo__accent">X</span></span>
+            <p class="footer__about">
+              Die Plattform für moderne Dienstleister: Online-Terminbuchung,
+              Mitarbeiter- und Kundenverwaltung in einer App.
+            </p>
+            <div class="footer__social">
+              <a href="#" aria-label="Fixx bei Instagram">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
+              </a>
+              <a href="#" aria-label="Fixx bei Facebook">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 8.5V7c0-.9.4-1.3 1.4-1.3H17V3h-2.4C11.8 3 11 4.4 11 6.6v1.9H9V12h2v9h3v-9h2.3l.4-3.5H14Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#" aria-label="Fixx bei LinkedIn">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.9"/><path d="M7.5 10.5V17M7.5 7.3v.1M11.5 17v-3.6c0-1.3.9-2.2 2-2.2s2 .9 2 2.2V17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Produkt</h4>
+            <ul class="footer__list">
+              <li><a href="index.html#funktionen">Funktionen</a></li>
+              <li><a href="index.html#branchen">Branchen</a></li>
+              <li><a href="index.html#preise">Preise</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Rechtliches</h4>
+            <ul class="footer__list">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutz</a></li>
+              <li><a href="agb.html">AGB</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Kontakt</h4>
+            <ul class="footer__list">
+              <li><a href="kontakt.html">Kontaktformular</a></li>
+              <li><a href="mailto:kontakt@fixx-app.de">kontakt@fixx-app.de</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; <span data-year>2026</span> Fixx. Alle Rechte vorbehalten.</p>
+          <nav aria-label="Rechtliche Hinweise">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

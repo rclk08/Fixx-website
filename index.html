@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d9488" />
+
+    <title>Fixx – Die Plattform für moderne Dienstleister</title>
+    <meta
+      name="description"
+      content="Fixx bündelt Online-Terminbuchung, Mitarbeiter- und Kundenverwaltung in einer App. Termine verwalten, Kunden gewinnen und Buchungen rund um die Uhr annehmen."
+    />
+
+    <!-- HINWEIS: Domain vor dem Deployment ersetzen. Sie steht in canonical,
+         den OpenGraph-Tags, robots.txt und sitemap.xml. Siehe README. -->
+    <link rel="canonical" href="https://www.fixx-app.de/" />
+
+    <!-- OpenGraph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fixx" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content="https://www.fixx-app.de/" />
+    <meta property="og:title" content="Fixx – Die Plattform für moderne Dienstleister" />
+    <meta
+      property="og:description"
+      content="Termine verwalten, Kunden gewinnen und Buchungen online annehmen – alles an einem Ort."
+    />
+    <meta property="og:image" content="https://www.fixx-app.de/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fixx – Die Plattform für moderne Dienstleister" />
+    <meta
+      name="twitter:description"
+      content="Termine verwalten, Kunden gewinnen und Buchungen online annehmen – alles an einem Ort."
+    />
+    <meta name="twitter:image" content="https://www.fixx-app.de/images/og-image.jpg" />
+
+    <!-- Favicon – Platzhalter, siehe favicon/README.md -->
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <!-- Strukturierte Daten: Unternehmen und Produkt -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fixx",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android",
+        "description": "Fixx ist eine Plattform für Dienstleister: Online-Terminbuchung, Mitarbeiterverwaltung, Kundenverwaltung und Gruppen-Events in einer App.",
+        "url": "https://www.fixx-app.de/",
+        "inLanguage": "de-DE",
+        "offers": {
+          "@type": "Offer",
+          "category": "Kostenlose Testphase"
+        }
+      }
+    </script>
+
+    <!-- Strukturierte Daten: FAQ – Inhalt identisch zum sichtbaren Bereich -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist Fixx?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fixx ist eine Plattform für Dienstleisterinnen und Dienstleister. Kundinnen und Kunden buchen Termine online, du verwaltest Kalender, Team, Leistungen und Kundendaten an einer Stelle – vom Smartphone aus."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie funktioniert die Terminbuchung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Du hinterlegst deine Leistungen mit Dauer und Preis sowie deine Arbeitszeiten. Fixx berechnet daraus die freien Zeitfenster. Kundinnen und Kunden sehen nur Termine, die tatsächlich verfügbar sind – Doppelbuchungen sind ausgeschlossen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Benötige ich eine eigene Website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Dein Profil in Fixx ist bereits deine Buchungsseite. Wenn du eine Website hast, kannst du den Buchungslink zusätzlich einbinden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich Mitarbeiter verwalten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Du lädst dein Team per E-Mail ein, legst individuelle Arbeitszeiten und Abwesenheiten fest und bestimmst, welche Leistungen wer anbietet. Über Berechtigungen steuerst du, worauf einzelne Mitarbeitende Zugriff haben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie starte ich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "App laden, Betrieb anlegen, Leistungen und Öffnungszeiten hinterlegen – danach bist du online buchbar. Die Einrichtung dauert in der Regel wenige Minuten."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <!-- ==================================================================
+         Kopfzeile
+         Achtung: Kopfzeile und Footer sind auf allen Seiten identisch.
+         Änderungen hier bitte in impressum / datenschutz / agb / kontakt
+         nachziehen (siehe README, Abschnitt „Navigation und Footer“).
+         ================================================================== -->
+    <header class="header" data-header>
+      <div class="container header__inner">
+        <a class="logo" href="index.html" aria-label="Fixx – zur Startseite">
+          FIX<span class="logo__accent">X</span>
+        </a>
+
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a class="nav__link" href="#funktionen" data-spy-link>Funktionen</a>
+          <a class="nav__link" href="#branchen" data-spy-link>Branchen</a>
+          <a class="nav__link" href="#preise" data-spy-link>Preise</a>
+          <a class="nav__link" href="#faq" data-spy-link>FAQ</a>
+          <a class="nav__link" href="kontakt.html">Kontakt</a>
+        </nav>
+
+        <a class="btn btn--primary btn--sm header__cta" href="#cta">Kostenlos starten</a>
+
+        <button
+          class="burger"
+          type="button"
+          data-burger
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Menü öffnen"
+        >
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
+      <ul class="mobile-nav__list">
+        <li><a class="mobile-nav__link" href="#funktionen">Funktionen</a></li>
+        <li><a class="mobile-nav__link" href="#branchen">Branchen</a></li>
+        <li><a class="mobile-nav__link" href="#preise">Preise</a></li>
+        <li><a class="mobile-nav__link" href="#faq">FAQ</a></li>
+        <li><a class="mobile-nav__link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a class="btn btn--primary btn--block" href="#cta">Kostenlos starten</a>
+    </div>
+
+    <main id="main">
+      <!-- ================================================================
+           Hero
+           ================================================================ -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <span class="eyebrow">Für Dienstleister</span>
+            <h1>Die Plattform für moderne Dienstleister.</h1>
+            <p class="lead">
+              Termine verwalten, Kunden gewinnen und Buchungen online annehmen – alles an
+              einem Ort.
+            </p>
+
+            <div class="btn-row">
+              <a class="btn btn--primary" href="#cta">Kostenlos starten</a>
+              <a class="btn btn--ghost" href="#funktionen">Mehr erfahren</a>
+            </div>
+
+            <ul class="hero__trust">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Kostenlose Testphase
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Monatlich kündbar
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Server in der EU
+              </li>
+            </ul>
+          </div>
+
+          <!-- Platzhalter für den App-Screenshot: vollständig in HTML/CSS
+               gezeichnet, damit kein Bild geladen werden muss.
+               Ersetzen: siehe README, Abschnitt „Screenshot einsetzen“. -->
+          <div class="mockup" role="img" aria-label="Vorschau der Fixx-App: Tagesübersicht mit gebuchten Terminen">
+            <div class="mockup__screen">
+              <div class="mockup__notch"></div>
+              <div class="mockup__body">
+                <div class="mockup__title">Heute</div>
+                <div class="mockup__sub">4 Termine · 3 Std. 20 Min.</div>
+
+                <div class="mockup__days">
+                  <div class="mockup__day">Mo<span>12</span></div>
+                  <div class="mockup__day">Di<span>13</span></div>
+                  <div class="mockup__day is-active">Mi<span>14</span></div>
+                  <div class="mockup__day">Do<span>15</span></div>
+                  <div class="mockup__day">Fr<span>16</span></div>
+                </div>
+
+                <div class="mockup__card">
+                  <div class="mockup__avatar">AM</div>
+                  <div class="mockup__line">
+                    <strong>Anna M.</strong>
+                    <small>Damen Haarschnitt</small>
+                  </div>
+                  <div class="mockup__time">09:30</div>
+                </div>
+
+                <div class="mockup__card">
+                  <div class="mockup__avatar mockup__avatar--b">TW</div>
+                  <div class="mockup__line">
+                    <strong>Thomas W.</strong>
+                    <small>Herren Haarschnitt</small>
+                  </div>
+                  <div class="mockup__time">11:00</div>
+                </div>
+
+                <div class="mockup__card">
+                  <div class="mockup__avatar mockup__avatar--c">LS</div>
+                  <div class="mockup__line">
+                    <strong>Lisa S.</strong>
+                    <small>Farbe &amp; Ansatz</small>
+                  </div>
+                  <div class="mockup__time">13:15</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mockup__badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>
+                <strong>Rund um die Uhr</strong>
+                <small>online buchbar</small>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           Funktionen
+           ================================================================ -->
+      <section class="section section--alt" id="funktionen">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="eyebrow">Funktionen</span>
+            <h2>Alles, was dein Betrieb täglich braucht</h2>
+            <p class="lead">
+              Von der ersten Buchung bis zur Abrechnung – ohne Zettelwirtschaft und ohne
+              zusätzliche Werkzeuge.
+            </p>
+          </div>
+
+          <div class="grid grid--4">
+            <article class="card" data-reveal data-delay="1">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="m9.5 15.5 1.7 1.7 3.3-3.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Online-Terminbuchung</h3>
+              <p>
+                Kundinnen und Kunden buchen selbst – zu jeder Tageszeit. Fixx zeigt nur
+                Zeiten, die wirklich frei sind.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="2">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2.8 20c.5-3.3 3-5.4 6.2-5.4s5.7 2.1 6.2 5.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16.5 5.5a3 3 0 0 1 0 5.6M18 14.8c2 .8 3.3 2.6 3.6 5.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Mitarbeiterverwaltung</h3>
+              <p>
+                Team per E-Mail einladen, Arbeitszeiten und Abwesenheiten pflegen,
+                Berechtigungen gezielt vergeben.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="3">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4.5 20c.6-3.8 3.6-6.2 7.5-6.2s6.9 2.4 7.5 6.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Kundenverwaltung</h3>
+              <p>
+                Kontakte, Terminhistorie und Notizen an einer Stelle – bei jedem Termin
+                sofort zur Hand.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="4">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="m12 3 2.1 4.6 5 .6-3.7 3.4 1 4.9L12 14.1 7.6 16.5l1-4.9L4.9 8.2l5-.6L12 3Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+                  <path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Gruppen-Events</h3>
+              <p>
+                Kurse und Workshops mit mehreren Plätzen anlegen und Anmeldungen
+                automatisch begrenzen.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="1">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M18 8.5a6 6 0 1 0-12 0c0 5.3-2 6.8-2 6.8h16s-2-1.5-2-6.8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M10.2 19a2.1 2.1 0 0 0 3.6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Automatische Erinnerungen</h3>
+              <p>
+                Benachrichtigungen vor dem Termin – das senkt Nichterscheinen spürbar,
+                ganz ohne Nachfassen.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="2">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2.5" y="5" width="19" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2.5 10h19" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6.5 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Online-Zahlungen</h3>
+              <p>
+                Zahlungen direkt bei der Buchung entgegennehmen – sicher abgewickelt über
+                einen zertifizierten Zahlungsdienstleister.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="3">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="7" y="13" width="3.4" height="3.4" rx="1" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3>Kalender</h3>
+              <p>
+                Tages- und Monatsansicht, Filter nach Team und Status – der Überblick
+                bleibt auch an vollen Tagen erhalten.
+              </p>
+            </article>
+
+            <article class="card" data-reveal data-delay="4">
+              <div class="card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Einfache Verwaltung</h3>
+              <p>
+                Leistungen, Preise und Öffnungszeiten in wenigen Schritten pflegen –
+                Änderungen wirken sofort.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           Branchen
+           ================================================================ -->
+      <section class="section" id="branchen">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="eyebrow">Für wen ist Fixx?</span>
+            <h2>Gemacht für alle, die auf Termin arbeiten</h2>
+            <p class="lead">
+              Ob Einzelbetrieb oder Team mit mehreren Standorten – Fixx passt sich deinem
+              Ablauf an, nicht umgekehrt.
+            </p>
+          </div>
+
+          <ul class="industries" data-reveal>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2.6" stroke="currentColor" stroke-width="1.9"/><circle cx="6" cy="18" r="2.6" stroke="currentColor" stroke-width="1.9"/><path d="M8 7.6 20 18M8 16.4 20 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              Friseur
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2.6" stroke="currentColor" stroke-width="1.9"/><circle cx="6" cy="18" r="2.6" stroke="currentColor" stroke-width="1.9"/><path d="M8 7.6 20 18M8 16.4 20 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              Barber
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 2 4.4 4.8.6-3.5 3.3.9 4.7L12 13.7 7.8 16l.9-4.7-3.5-3.3 4.8-.6L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              Kosmetik
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="3" width="8" height="14" rx="4" stroke="currentColor" stroke-width="1.9"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              Nagelstudio
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.4-7-9.6A4.4 4.4 0 0 1 12 8a4.4 4.4 0 0 1 7 3.4C19 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+              Physiotherapie
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              Heilpraktiker
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9v6M18 9v6M3 11v2M21 11v2M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Fitness
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="1.9"/><path d="m8.5 14-1 7 4.5-2.5L16.5 21l-1-7" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
+              Coaching
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20c3.9 0 6-2.2 6-5 0-2.4-1.6-3.6-3-4.6-1.1-.8-1.5-1.6-1.5-2.4a2.5 2.5 0 0 0-5 0c0 .8-.4 1.6-1.5 2.4C5.6 11.4 4 12.6 4 15c0 2.8 2.1 5 6 5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              Tierpflege
+            </li>
+            <li class="industry">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14.5 6.5 3 3M4 20l7.5-7.5M15.8 3.2a3.5 3.5 0 0 1 5 5l-2.3 2.3-5-5 2.3-2.3Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Handwerk
+            </li>
+            <li class="industry industry--more">und viele weitere</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           Vorteile
+           ================================================================ -->
+      <section class="section section--mint" id="vorteile">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="eyebrow">Vorteile</span>
+            <h2>Was sich für dich verändert</h2>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="benefit" data-reveal data-delay="1">
+              <div class="benefit__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 9.5 12l3.5 3.5L20 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 8h-4.5M20 8v4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Mehr Buchungen</h3>
+                <p>Wer nachts auf dein Angebot stößt, kann sofort buchen statt bis morgen zu warten.</p>
+              </div>
+            </article>
+
+            <article class="benefit" data-reveal data-delay="2">
+              <div class="benefit__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h3>Weniger Verwaltungsaufwand</h3>
+                <p>Terminbuch, Telefonliste und Erinnerungen laufen zusammen – ein System statt drei.</p>
+              </div>
+            </article>
+
+            <article class="benefit" data-reveal data-delay="3">
+              <div class="benefit__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4.5 6.2v5.2c0 4.4 3.1 8.5 7.5 9.6 4.4-1.1 7.5-5.2 7.5-9.6V6.2L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Professioneller Auftritt</h3>
+                <p>Ein klares Buchungsprofil mit Leistungen, Preisen und Zeiten wirkt verbindlich.</p>
+              </div>
+            </article>
+
+            <article class="benefit" data-reveal data-delay="4">
+              <div class="benefit__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Zeit sparen</h3>
+                <p>Keine Rückrufe zur Terminabsprache mehr – die Zeit bleibt für die Arbeit am Kunden.</p>
+              </div>
+            </article>
+
+            <article class="benefit" data-reveal data-delay="5">
+              <div class="benefit__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2.1 2.1M16.9 16.9 19 19M19 5l-2.1 2.1M7.1 16.9 5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <div>
+                <h3>24/7 online buchbar</h3>
+                <p>Dein Kalender nimmt Termine an, auch wenn dein Betrieb geschlossen ist.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           Preise – Platzhalter, konkrete Beträge folgen
+           ================================================================ -->
+      <section class="section" id="preise">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="eyebrow">Preise</span>
+            <h2>Ohne Risiko starten</h2>
+            <p class="lead">
+              Erst testen, dann entscheiden. Die konkreten Tarife veröffentlichen wir in
+              Kürze an dieser Stelle.
+            </p>
+          </div>
+
+          <div class="pricing">
+            <article class="plan" data-reveal data-delay="1">
+              <h3>Kostenlose Testphase</h3>
+              <div class="plan__price">0 €</div>
+              <p class="plan__note">Voller Funktionsumfang zum Ausprobieren</p>
+              <ul class="plan__list">
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Alle Funktionen ohne Einschränkung
+                </li>
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Keine Zahlungsdaten zum Start nötig
+                </li>
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Einrichtung in wenigen Minuten
+                </li>
+              </ul>
+              <a class="btn btn--ghost btn--block" href="#cta">Kostenlos starten</a>
+            </article>
+
+            <article class="plan plan--featured" data-reveal data-delay="2">
+              <span class="plan__tag">Ab Werk fair</span>
+              <h3>Monatlich kündbar</h3>
+              <div class="plan__price">in Kürze</div>
+              <p class="plan__note">Keine Mindestlaufzeit, keine Einrichtungsgebühr</p>
+              <ul class="plan__list">
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Monatlich kündbar
+                </li>
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Unbegrenzt Termine und Kundinnen
+                </li>
+                <li>
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Support per E-Mail
+                </li>
+              </ul>
+              <a class="btn btn--primary btn--block" href="kontakt.html">Preise ansehen</a>
+            </article>
+          </div>
+
+          <p class="pricing__footnote" data-reveal>
+            Du möchtest informiert werden, sobald die Tarife feststehen?
+            <a href="kontakt.html">Schreib uns kurz</a> – wir melden uns.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           FAQ
+           ================================================================ -->
+      <section class="section section--alt" id="faq">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="eyebrow">FAQ</span>
+            <h2>Häufige Fragen</h2>
+          </div>
+
+          <div class="faq">
+            <article class="faq__item" data-faq-item data-reveal>
+              <h3>
+                <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+                  Was ist Fixx?
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1" data-faq-a hidden>
+                <div>
+                  Fixx ist eine Plattform für Dienstleisterinnen und Dienstleister.
+                  Kundinnen und Kunden buchen Termine online, du verwaltest Kalender,
+                  Team, Leistungen und Kundendaten an einer Stelle – vom Smartphone aus.
+                </div>
+              </div>
+            </article>
+
+            <article class="faq__item" data-faq-item data-reveal>
+              <h3>
+                <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+                  Wie funktioniert die Terminbuchung?
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2" data-faq-a hidden>
+                <div>
+                  Du hinterlegst deine Leistungen mit Dauer und Preis sowie deine
+                  Arbeitszeiten. Fixx berechnet daraus die freien Zeitfenster. Kundinnen
+                  und Kunden sehen nur Termine, die tatsächlich verfügbar sind –
+                  Doppelbuchungen sind ausgeschlossen.
+                </div>
+              </div>
+            </article>
+
+            <article class="faq__item" data-faq-item data-reveal>
+              <h3>
+                <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+                  Benötige ich eine eigene Website?
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3" data-faq-a hidden>
+                <div>
+                  Nein. Dein Profil in Fixx ist bereits deine Buchungsseite. Wenn du eine
+                  Website hast, kannst du den Buchungslink zusätzlich einbinden.
+                </div>
+              </div>
+            </article>
+
+            <article class="faq__item" data-faq-item data-reveal>
+              <h3>
+                <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+                  Kann ich Mitarbeiter verwalten?
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4" data-faq-a hidden>
+                <div>
+                  Ja. Du lädst dein Team per E-Mail ein, legst individuelle Arbeitszeiten
+                  und Abwesenheiten fest und bestimmst, welche Leistungen wer anbietet.
+                  Über Berechtigungen steuerst du, worauf einzelne Mitarbeitende Zugriff
+                  haben.
+                </div>
+              </div>
+            </article>
+
+            <article class="faq__item" data-faq-item data-reveal>
+              <h3>
+                <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+                  Wie starte ich?
+                  <span class="faq__icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5" data-faq-a hidden>
+                <div>
+                  App laden, Betrieb anlegen, Leistungen und Öffnungszeiten hinterlegen –
+                  danach bist du online buchbar. Die Einrichtung dauert in der Regel
+                  wenige Minuten.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           Call-to-Action
+           ================================================================ -->
+      <section class="cta" id="cta">
+        <div class="container cta__inner" data-reveal="scale">
+          <h2>Bereit, dein Unternehmen digital zu organisieren?</h2>
+          <p>
+            Starte kostenlos, richte deinen Betrieb in wenigen Minuten ein und nimm noch
+            heute die erste Online-Buchung an.
+          </p>
+          <div class="btn-row btn-row--center">
+            <a class="btn btn--light" href="kontakt.html">Jetzt kostenlos starten</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================================================================
+         Footer – auf allen Seiten identisch
+         ================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <span class="logo">FIX<span class="logo__accent">X</span></span>
+            <p class="footer__about">
+              Die Plattform für moderne Dienstleister: Online-Terminbuchung,
+              Mitarbeiter- und Kundenverwaltung in einer App.
+            </p>
+            <div class="footer__social">
+              <!-- Platzhalter: echte Profil-URLs eintragen, sobald vorhanden -->
+              <a href="#" aria-label="Fixx bei Instagram">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
+              </a>
+              <a href="#" aria-label="Fixx bei Facebook">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 8.5V7c0-.9.4-1.3 1.4-1.3H17V3h-2.4C11.8 3 11 4.4 11 6.6v1.9H9V12h2v9h3v-9h2.3l.4-3.5H14Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#" aria-label="Fixx bei LinkedIn">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.9"/><path d="M7.5 10.5V17M7.5 7.3v.1M11.5 17v-3.6c0-1.3.9-2.2 2-2.2s2 .9 2 2.2V17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4>Produkt</h4>
+            <ul class="footer__list">
+              <li><a href="index.html#funktionen">Funktionen</a></li>
+              <li><a href="index.html#branchen">Branchen</a></li>
+              <li><a href="index.html#preise">Preise</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Rechtliches</h4>
+            <ul class="footer__list">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutz</a></li>
+              <li><a href="agb.html">AGB</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Kontakt</h4>
+            <ul class="footer__list">
+              <li><a href="kontakt.html">Kontaktformular</a></li>
+              <!-- Platzhalter: echte Adresse eintragen -->
+              <li><a href="mailto:kontakt@fixx-app.de">kontakt@fixx-app.de</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; <span data-year>2026</span> Fixx. Alle Rechte vorbehalten.</p>
+          <nav aria-label="Rechtliche Hinweise">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
