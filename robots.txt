@@ -9,4 +9,4 @@ Allow: /
 # Disallow: /app/
 # Disallow: /login/
 
-Sitemap: https://www.fixx-app.de/sitemap.xml
+Sitemap: https://www.fixxapp.de/sitemap.xml

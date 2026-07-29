@@ -76,12 +76,12 @@ Es gibt **keinen Build-Schritt**: Datei speichern, Browser neu laden, fertig.
 
 ## Vor dem Livegang erledigen
 
-Diese Punkte sind bewusst als Platzhalter angelegt und müssen ersetzt werden.
+### 1. Domain bestätigen
 
-### 1. Domain eintragen — erforderlich
-
-`https://www.fixx-app.de` ist ein Platzhalter. Ersetze ihn durch die echte
-Domain in:
+Die Seite verwendet durchgängig `https://www.fixxapp.de` — abgeleitet aus der
+Kontaktadresse `support@fixxapp.de` in den Rechtstexten. **Das ist eine
+Annahme, keine bestätigte Angabe.** Falls die Domain anders lautet, ersetze sie
+in:
 
 - allen fünf HTML-Dateien (`<link rel="canonical">` und die `og:`/`twitter:`-Tags)
 - `robots.txt` (Zeile `Sitemap:`)
@@ -89,26 +89,45 @@ Domain in:
 
 Suchen und Ersetzen über den ganzen Ordner erledigt das in einem Schritt.
 
-### 2. Rechtstexte prüfen lassen — erforderlich
+### 2. Rechtstexte — Herkunft und offene Punkte
 
-`impressum.html`, `datenschutz.html` und `agb.html` sind **Vorlagen, keine
-geprüften Rechtstexte**. Alle zu ersetzenden Stellen sind im Text gelb markiert
-(`<span class="ph">`) und jede Seite trägt oben einen sichtbaren Hinweis.
+`impressum.html`, `datenschutz.html` und `agb.html` enthalten die **echten
+Texte aus der Supabase-Tabelle `public.legal_documents`** (Version 1.0.0,
+veröffentlicht am 07.06.2026, `is_active = true`). Der Wortlaut wurde
+unverändert übernommen und lediglich in semantisches HTML überführt.
 
-Ein unvollständiges Impressum ist abmahnfähig, und unwirksame AGB-Klauseln fallen
-im Streitfall ersatzlos weg. Lass die Texte vor der Veröffentlichung von einer
-Rechtsberatung prüfen.
+Damit sind es dieselben Texte, die auch in der App angezeigt werden. Bei
+Änderungen ist die Datenbank die führende Quelle — die HTML-Seiten müssen dann
+nachgezogen werden (siehe unten, „Rechtstexte aktualisieren“).
 
-Die Datenschutzerklärung beschreibt den **aktuellen** Stand der Seite: keine
-Cookies, kein Tracking, keine Ressourcen von fremden Servern. Sobald du daran
-etwas änderst — Analyse-Werkzeug, Schriften von einem CDN, ein Formular mit
-Backend, Zahlungsdienste — muss der Text angepasst werden.
+Zwei Punkte, die eine Rechtsberatung prüfen sollte:
 
-### 3. E-Mail-Adressen setzen
+- Das Impressum verweist auf **§ 5 TMG**. Das Telemediengesetz wurde im Mai 2024
+  durch das **Digitale-Dienste-Gesetz (DDG)** abgelöst; die übliche Formulierung
+  lautet heute „Angaben gemäß § 5 DDG“. Der Verweis wurde unverändert aus der
+  Datenbank übernommen.
+- Die Datenschutzerklärung aus der Datenbank beschreibt die **App**. Für diese
+  Website wurde deshalb **Abschnitt 12 „Diese Website“ ergänzt** (keine Cookies,
+  kein Tracking, Server-Logfiles beim Hosting-Anbieter, `mailto:`-Formular).
+  Ohne diesen Abschnitt fehlten Angaben zur Website selbst. Er steht **nicht**
+  in der Datenbank — bei einer Aktualisierung von dort nicht versehentlich
+  überschreiben.
 
-`kontakt@fixx-app.de`, `datenschutz@fixx-app.de` und `presse@fixx-app.de` sind
-Platzhalter. Sie stehen in allen Footern, im Impressum und in
-`kontakt.html` (Attribut `data-recipient` am Formular).
+### 3. Rechtstexte aktualisieren
+
+Die aktiven Fassungen lassen sich jederzeit abrufen:
+
+```bash
+curl -s "$EXPO_PUBLIC_SUPABASE_URL/rest/v1/legal_documents?is_active=eq.true&select=document_type,title,version,content" \
+  -H "apikey: $EXPO_PUBLIC_SUPABASE_ANON_KEY" \
+  -H "Authorization: Bearer $EXPO_PUBLIC_SUPABASE_ANON_KEY"
+```
+
+Die RLS-Policy `Legal documents public read active` erlaubt `anon` das Lesen
+aktiver Dokumente — es braucht also nur den öffentlichen Anon-Key.
+
+Nach einer Aktualisierung auch die Zeile „Stand: … · Version …“ am Ende jeder
+Rechtsseite anpassen.
 
 ### 4. Bilder ergänzen
 
