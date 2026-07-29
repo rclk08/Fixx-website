@@ -19,9 +19,9 @@ Supabase. Sie teilt keinerlei Code oder Abhängigkeiten mit diesen Teilen — si
 website/
 ├── index.html          Startseite: Hero, Funktionen, Branchen, Vorteile,
 │                       Preise, FAQ, Call-to-Action
-├── impressum.html      Anbieterkennzeichnung (Vorlage)
-├── datenschutz.html    Datenschutzerklärung (Vorlage)
-├── agb.html            Geschäftsbedingungen (Vorlage)
+├── impressum.html      Anbieterkennzeichnung (aus legal_documents)
+├── datenschutz.html    Datenschutzerklärung (aus legal_documents)
+├── agb.html            Geschäftsbedingungen (aus legal_documents)
 ├── kontakt.html        Kontaktdaten und Formular
 │
 ├── css/
@@ -79,7 +79,7 @@ Es gibt **keinen Build-Schritt**: Datei speichern, Browser neu laden, fertig.
 ### 1. Domain bestätigen
 
 Die Seite verwendet durchgängig `https://www.fixxapp.de` — abgeleitet aus der
-Kontaktadresse `support@fixxapp.de` in den Rechtstexten. **Das ist eine
+Kontaktadresse `kontakt@fixxapp.de` in den Rechtstexten. **Das ist eine
 Annahme, keine bestätigte Angabe.** Falls die Domain anders lautet, ersetze sie
 in:
 
